@@ -126,11 +126,35 @@ def pie_status(df):
     plt.show()
 
 
-pie_status(captain)
+#pie_status(captain)
 
 plt.clf()
 
 # write function to create scatter plot of any two numeric columns here:
 
+def twocol_scatter(df, col1, col2):
+  plt.scatter(df[col1], df[col2])
+  plt.title(f'Scatter plot {col1} vs. {col2}')
+  plt.xlabel(col1)
+  plt.ylabel(col2)
+  plt.show()
+
+
+#twocol_scatter(captain, 'length', 'num_inversions')
+
+plt.clf()
+
+#additional function
+
+def height_speed(df):
+    df = df[df['height'] < 140]
+    plt.scatter(df['height'], df['speed'])
+    plt.title('Scatter plot Height vs. Speed')
+    plt.xlabel('Height')
+    plt.ylabel('Speed')
+    plt.show()
+
+
+height_speed(captain)
 
 plt.clf()
